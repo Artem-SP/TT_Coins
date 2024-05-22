@@ -2,15 +2,10 @@
 import { Inter } from "next/font/google";
 import { Provider } from "react-redux";
 import { store } from "../store/store";
-import Header from "../components/Header";
+import Header from "../components/Header/Header";
 import "./globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
-
-// export const metadata = {
-//   title: "Coins price",
-//   description: "Test task",
-// };
 
 export default function RootLayout({ children }) {
   return (

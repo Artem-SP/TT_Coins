@@ -1,7 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { getAll } from "../store/getAll";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { getAll } from "../../store/getAll";
+
+import styles from "./AllCoins.module.scss";
 
 const MultipleCoins = () => {
   const dispatch = useAppDispatch();
@@ -16,7 +18,6 @@ const MultipleCoins = () => {
   const interval = () => {
     setInterval(async () => {
       dispatch(getAll());
-      console.log(status);
     }, 600000);
   };
 
@@ -28,10 +29,10 @@ const MultipleCoins = () => {
   return (
     <>
       {status !== "resolved" ? (
-        <div>Loading...</div>
+        <div className={styles.loading}>Loading...</div>
       ) : (
-        <div>
-          <table>
+        <div className={styles.content}>
+          <table className={styles.table}>
             <thead>
               <tr>
                 <th>Currensy</th>
@@ -47,7 +48,7 @@ const MultipleCoins = () => {
               ))}
             </tbody>
           </table>
-          <p>Updated at: {timeUpdated}</p>
+          <p className={styles.uploaded}>Updated at: {timeUpdated}</p>
         </div>
       )}
     </>

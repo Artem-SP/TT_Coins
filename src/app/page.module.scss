@@ -1,0 +1,38 @@
+.main {
+  .content {
+    height: 100%;
+    display: flex;
+    padding: 30%;
+
+    justify-content: center;
+
+    .rate {
+      font-size: 32px;
+    }
+    .symbol {
+      font-size: 32px;
+    }
+
+    .uploaded {
+      padding: 0 30px;
+      position: absolute;
+      bottom: 30px;
+      text-align: center;
+    }
+  }
+  .loading {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    .content {
+      padding: 15%;
+    }
+  }
+}

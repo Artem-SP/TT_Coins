@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Image from "next/image";
 import styles from "./page.module.scss";
 
 import { useAppDispatch, useAppSelector } from "../store/hooks";
@@ -28,22 +27,17 @@ export default function Home() {
     return clearInterval(interval);
   }, []);
 
-  console.log(coins);
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <div>
-          {status !== "resolved" ? (
-            <div>Loading...</div>
-          ) : (
-            <div>
-              <div>{coins.USD.rate}</div>
-              <div>&#65284;</div>
-              <p>Updated at: {timeUpdated}</p>
-            </div>
-          )}
+      {status !== "resolved" ? (
+        <div className={styles.loading}>Loading...</div>
+      ) : (
+        <div className={styles.content}>
+          <div className={styles.symbol}>$</div>
+          <div className={styles.rate}>{coins.USD.rate}</div>
+          <p className={styles.uploaded}>Updated at: {timeUpdated}</p>
         </div>
-      </div>
+      )}
     </main>
   );
 }

@@ -2,14 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { getAll } from "./getAll";
 
-// import { getAll } from './getAll'
-// import { getSinglePoke } from './getSinglePoke'
-// import { getTypes } from './getTypes'
-// import { getByCategory } from './getByCategory'
-
-// import { createAsyncThunk } from "@reduxjs/toolkit";
-// import axios from "axios";
-
 const initialState = {
   coins: {},
   chartName: "Bitcoin",
@@ -40,5 +32,4 @@ const coinSlice = createSlice({
   },
 });
 
-// export default coinsSlice.reducer;
 export default coinSlice.reducer;
